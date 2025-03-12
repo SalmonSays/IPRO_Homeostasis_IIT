@@ -1,6 +1,9 @@
+import * as React from 'react';
+import { PageTemplate } from './PageTemplate';
+import './PageTemplate.css';
 import { Inspirations, InspirationLink } from "../components";
 
-export function HumanPractices() {
+export const HumanPractices: React.FC = () => {
   const links: InspirationLink[] = [
     { year: 2019, teamName: "Thessaly", pageName: "Human_Practices" },
     { year: 2019, teamName: "Linkoping_Sweden", pageName: "Human_Practices" },
@@ -12,7 +15,10 @@ export function HumanPractices() {
   ];
 
   return (
-    <>
+    <PageTemplate 
+      title="Human Practices" 
+      subtitle="Understanding and addressing the societal impact of our work"
+    >
       <div className="row mt-4">
         <div className="col">
           <div className="bd-callout bd-callout-info">
@@ -70,7 +76,7 @@ export function HumanPractices() {
           <p>
             At iGEM we believe societal considerations should be upfront and
             integrated throughout the design and execution of synthetic biology
-            projects. “Human Practices” refers to iGEM teams' efforts to
+            projects. "Human Practices" refers to iGEM teams' efforts to
             actively consider how the world affects their work and their work
             affects the world. Through your Human Practices activities, your
             team should demonstrate how you have thought carefully and
@@ -104,6 +110,6 @@ export function HumanPractices() {
         </div>
         <Inspirations inspirationLinkList={links} />
       </div>
-    </>
+    </PageTemplate>
   );
-}
+};

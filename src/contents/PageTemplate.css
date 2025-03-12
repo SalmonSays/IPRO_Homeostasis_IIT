@@ -1,0 +1,33 @@
+.page-container {
+  padding: 2rem 1rem;
+  color: #e9ecef;
+}
+
+.content-section {
+  background: #2a1a3a;
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background-color: #FF6B6B;
+  border-color: #FF6B6B;
+}
+
+.btn-primary:hover {
+  background-color: #ff5252;
+  border-color: #ff5252;
+}
+
+.btn-outline-primary {
+  color: #FF6B6B;
+  border-color: #FF6B6B;
+}
+
+.btn-outline-primary:hover {
+  background-color: #FF6B6B;
+  border-color: #FF6B6B;
+  color: white;
+} 

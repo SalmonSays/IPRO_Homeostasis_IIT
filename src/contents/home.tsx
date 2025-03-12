@@ -1,16 +1,84 @@
-import { Inspirations, InspirationLink } from "../components";
-import { useEffect, useState } from "react";
+import * as React from 'react';
+import './home.css';  // Make sure to create this file
 
-export function Home() {
-  const [animateStats, setAnimateStats] = useState(false);
-  const [animateChallenges, setAnimateChallenges] = useState(false);
-  const links: InspirationLink[] = [
-    { year: 2022, teamName: "DTU-Denmark", pageName: "" },
-    { year: 2022, teamName: "Virginia", pageName: "" },
-    { year: 2022, teamName: "Crete", pageName: "" },
+interface StatItem {
+  number: string;
+  text: string;
+  icon: string;
+}
+
+interface TestimonialItem {
+  text: string;
+  name: string;
+  avatar: string;
+}
+
+interface ChallengeItem {
+  text: string;
+  value: string;
+  icon: string;
+}
+
+export const Home: React.FC = () => {
+  const [animateStats, setAnimateStats] = React.useState(false);
+  const [animateChallenges, setAnimateChallenges] = React.useState(false);
+  const [animateNewEra, setAnimateNewEra] = React.useState(false);
+  
+  const stats: StatItem[] = [
+    { 
+      number: "94M", 
+      text: "U.S. Adults with High Cholesterol",
+      icon: "/icons/heart-health.svg"
+    },
+    { 
+      number: "NO SYMPTOMS", 
+      text: "Until Serious Complications",
+      icon: "/icons/health-graph.svg"
+    },
+    { 
+      number: "#1", 
+      text: "Cause of Heart Disease",
+      icon: "/icons/heart-pulse.svg"
+    }
   ];
 
-  useEffect(() => {
+  const challenges: ChallengeItem[] = [
+    { 
+      text: "Don't Reach Target Levels", 
+      value: "55%",
+      icon: "/icons/target-levels.svg"
+    },
+    { 
+      text: "Muscle Pain, Liver Issues", 
+      value: "Side Effects",
+      icon: "/icons/side-effects.svg"
+    },
+    { 
+      text: "Poor Response to Treatment", 
+      value: "Resistance",
+      icon: "/icons/resistance.svg"
+    }
+  ];
+
+  const testimonials: TestimonialItem[] = [
+    {
+      text: "After years of struggling with statin side effects, this new approach gives me hope.",
+      name: "John D., Patient",
+      avatar: "/icons/patient-avatar.svg"
+    },
+    {
+      text: "Traditional treatments weren't enough. We need innovative solutions like this.",
+      name: "Dr. Sarah M., Cardiologist",
+      avatar: "/icons/doctor-avatar.svg"
+    },
+    {
+      text: "Finally, a promising alternative for patients who don't respond to conventional therapy.",
+      name: "Lisa R., Research Partner",
+      avatar: "/icons/researcher-avatar.svg"
+    }
+  ];
+
+  React.useEffect(() => {
     // Start animations with a delay between sections
     setAnimateStats(true);
     setTimeout(() => setAnimateChallenges(true), 1000); // Start second section 1s after first
@@ -30,8 +98,11 @@ export function Home() {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate__animated', entry.target.dataset.animation);
+        if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+          const animation = entry.target.getAttribute('data-animation');
+          if (animation) {
+            entry.target.classList.add('animate__animated', animation);
+          }
         }
       });
     });
@@ -40,31 +111,56 @@ export function Home() {
       observer.observe(element);
     });
 
+    // New Era section scroll observer
+    const newEraObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setAnimateNewEra(true);
+            newEraObserver.disconnect(); // Only animate once
+          }
+        });
+      },
+      { threshold: 0.2 } // Start animation when 20% of the section is visible
+    );
+
+    const newEraSection = document.querySelector('.new-era-section');
+    if (newEraSection) {
+      newEraObserver.observe(newEraSection);
+    }
+
     return () => {
       clearInterval(interval);
-      console.log("Cleanup performed"); // Debug log
       observer.disconnect();
+      newEraObserver.disconnect();
     };
   }, []);
 
-  // Debug render
-  console.log("Current animateStats state:", animateStats);
-  console.log("Current animateChallenges state:", animateChallenges);
-
   return (
     <div className="home-container">
+      {/* Header Section with Logo */}
+      <div className="row mt-4 mb-5">
+        <div className="col text-center">
+          <img 
+            src="/images/homeostasis-logo.png" 
+            alt="Homeostasis Logo" 
+            className="img-fluid heartbeat-animation" 
+            style={{ maxWidth: '300px' }}
+          />
+          <h1 className="display-4 mt-4">Revolutionizing Cholesterol Management</h1>
+          <p className="lead">Using synthetic biology to transform cardiovascular health</p>
+        </div>
+      </div>
+
       {/* Key Statistics Section */}
       <div className="row mt-4">
         <div className="col">
           <div className="impact-section p-4">
             <div className="row">
-              {[
-                { number: "94M", text: "U.S. Adults with High Cholesterol" },
-                { number: "NO SYMPTOMS", text: "Until Serious Complications" },
-                { number: "#1", text: "Cause of Heart Disease" }
-              ].map((stat, index) => (
+              {stats.map((stat, index) => (
                 <div key={index} className="col-md-4">
                   <div className={`key-stat-card ${animateStats ? 'balloon-animation' : ''}`}>
+                    <img src={stat.icon} alt={stat.text} className="mb-3" style={{ width: '64px' }} />
                     <span className="highlight-number">{stat.number}</span>
                     <p>{stat.text}</p>
                   </div>
@@ -79,17 +175,24 @@ export function Home() {
       <div className="row mt-5">
         <div className="col d-flex justify-content-center">
           <div className="treatment-challenges p-4" style={{ maxWidth: '800px' }}>
+            <h2 className="text-center mb-4">Treatment Challenges</h2>
             <div className="challenge-timeline">
-              {[
-                { text: "Don't Reach Target Levels", value: "55%" },
-                { text: "Muscle Pain, Liver Issues", value: "Side Effects" },
-                { text: "Poor Response to Treatment", value: "Resistance" }
-              ].map((challenge, index) => (
-                <div key={index} className={`challenge-item text-center ${animateChallenges ? 'balloon-animation' : ''}`}>
-                  <span className="highlight-text">{challenge.value}</span>
-                  <p>{challenge.text}</p>
-                </div>
-              ))}
+              <div className="row">
+                {challenges.map((challenge, index) => (
+                  <div key={index} className="col-md-4">
+                    <div className={`challenge-item text-center ${animateChallenges ? 'balloon-animation' : ''}`}>
+                      <img 
+                        src={challenge.icon} 
+                        alt={challenge.text}
+                        className="mb-3"
+                        style={{ width: '64px', height: '64px' }}
+                      />
+                      <span className="highlight-text d-block mb-2">{challenge.value}</span>
+                      <p className="challenge-description">{challenge.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -98,7 +201,7 @@ export function Home() {
       {/* Hero Section: Problem Meets Possibility */}
       <div className="row mt-4">
         <div className="col text-center py-5" style={{ 
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")', 
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")', 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           color: 'white',
@@ -142,31 +245,50 @@ export function Home() {
       {/* New Solution Section */}
       <div className="row mt-5">
         <div className="col">
-          <h2 className="text-center display-5">A New Era in Cholesterol Management</h2>
-          <hr />
-          <p className="lead text-center mb-5">
-            Leveraging the power of synthetic biology, we're developing innovative pathways 
-            to effectively lower cholesterol where traditional medications fall short.
-          </p>
-          <div className="row align-items-center">
-            <div className="col-md-6">
-              <h4>Traditional Treatment</h4>
-              <div className="treatment-box traditional p-4 mb-4">
-                <ul>
-                  <li>Statins block cholesterol production</li>
-                  <li>One-size-fits-all approach</li>
-                  <li>Side effects common</li>
-                </ul>
+          <div className="new-era-section">
+            <h2 className={`text-center new-era-title display-5 ${animateNewEra ? 'slide-from-left' : ''}`}>
+              A New Era in Cholesterol Management
+            </h2>
+            <p className={`lead text-center mb-5 ${animateNewEra ? 'slide-from-right' : ''}`}>
+              Leveraging the power of synthetic biology, we're developing innovative pathways 
+              to effectively lower cholesterol where traditional medications fall short.
+            </p>
+            <div className="row align-items-stretch">
+              <div className="col-md-6 mb-4">
+                <div className={`approach-card traditional ${animateNewEra ? 'slide-from-bottom' : ''}`}>
+                  <div className="text-center">
+                    <img 
+                      src="/icons/pills.svg"
+                      alt="Traditional Treatment"
+                      className="approach-icon"
+                    />
+                  </div>
+                  <h4 className="approach-title text-center">Traditional Treatment</h4>
+                  <ul className="approach-list">
+                    <li>Statins block cholesterol production</li>
+                    <li>One-size-fits-all approach</li>
+                    <li>Common side effects like muscle pain</li>
+                    <li>Limited effectiveness for some patients</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div className="col-md-6">
-              <h4>Our Approach</h4>
-              <div className="treatment-box innovative p-4 mb-4">
-                <ul>
-                  <li>Synthetic biology enhances natural processes</li>
-                  <li>Personalized treatment potential</li>
-                  <li>Designed for minimal side effects</li>
-                </ul>
+              <div className="col-md-6 mb-4">
+                <div className={`approach-card innovative ${animateNewEra ? 'slide-from-bottom delay-1' : ''}`}>
+                  <div className="text-center">
+                    <img 
+                      src="/icons/dna.svg"
+                      alt="Our Approach"
+                      className="approach-icon"
+                    />
+                  </div>
+                  <h4 className="approach-title text-center">Our Innovative Approach</h4>
+                  <ul className="approach-list">
+                    <li>Synthetic biology enhances natural processes</li>
+                    <li>Personalized treatment potential</li>
+                    <li>Designed for minimal side effects</li>
+                    <li>Targeted approach for better outcomes</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -179,33 +301,20 @@ export function Home() {
           <h2 className="text-center display-5">Real People, Real Impact</h2>
           <hr />
           <div className="row mt-4">
-            <div className="col-md-4">
-              <div className="testimonial-box p-4">
-                <p className="testimonial-text">
-                  "After years of struggling with statin side effects, 
-                  this new approach gives me hope."
-                </p>
-                <p className="testimonial-name">- John D., Patient</p>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="col-md-4">
+                <div className="testimonial-box p-4 text-center">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name} 
+                    className="mb-3"
+                    style={{ width: '64px' }}
+                  />
+                  <p className="testimonial-text">"{testimonial.text}"</p>
+                  <p className="testimonial-name">- {testimonial.name}</p>
+                </div>
               </div>
-            </div>
-            <div className="col-md-4">
-              <div className="testimonial-box p-4">
-                <p className="testimonial-text">
-                  "Traditional treatments weren't enough. We need 
-                  innovative solutions like this."
-                </p>
-                <p className="testimonial-name">- Dr. Sarah M., Cardiologist</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="testimonial-box p-4">
-                <p className="testimonial-text">
-                  "Finally, a promising alternative for patients who 
-                  don't respond to conventional therapy."
-                </p>
-                <p className="testimonial-name">- Lisa R., Research Partner</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -230,4 +339,4 @@ export function Home() {
       </div>
     </div>
   );
-}
+};

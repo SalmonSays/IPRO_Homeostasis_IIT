@@ -1,6 +1,9 @@
+import * as React from 'react';
+import { PageTemplate } from './PageTemplate';
+import './PageTemplate.css';
 import { Inspirations, InspirationLink } from "../components";
 
-export function Entrepreneurship() {
+export const Entrepreneurship: React.FC = () => {
   const links: InspirationLink[] = [
     { year: 2019, teamName: "UCopenhagen", pageName: "Entrepreneurship" },
     { year: 2019, teamName: "Thessaly", pageName: "Entrepreneurship" },
@@ -11,7 +14,10 @@ export function Entrepreneurship() {
   ];
 
   return (
-    <>
+    <PageTemplate 
+      title="Entrepreneurship" 
+      subtitle="Exploring the commercial potential of our innovation"
+    >
       <div className="row mt-4">
         <div className="col">
           <div className="bd-callout bd-callout-info">
@@ -74,6 +80,6 @@ export function Entrepreneurship() {
         </div>
         <Inspirations inspirationLinkList={links} />
       </div>
-    </>
+    </PageTemplate>
   );
-}
+};

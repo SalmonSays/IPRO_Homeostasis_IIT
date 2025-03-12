@@ -5,6 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import Pages from "../pages.ts";
 import { useState, useEffect } from "react";
+import { scrollToTop } from "../utils/scrollUtils";
 
 export function Navbar() {
   const [animate, setAnimate] = useState(false);
@@ -21,6 +22,10 @@ export function Navbar() {
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    scrollToTop();
+  };
 
   const pages = Pages.map((item, pageIndex) => {
     if ("folder" in item && item.folder) {
@@ -47,8 +52,14 @@ export function Navbar() {
         </NavDropdown>
       );
     } else if ("path" in item && item.path) {
+      const isHome = item.path === "/";
       return (
-        <Nav.Link key={`page-${pageIndex}`} as={Link} to={item.path}>
+        <Nav.Link 
+          key={`page-${pageIndex}`} 
+          as={Link} 
+          to={item.path}
+          onClick={isHome ? handleHomeClick : undefined}
+        >
           {item.name}
         </Nav.Link>
       );
@@ -58,7 +69,12 @@ export function Navbar() {
   return (
     <BootstrapNavbar expand="lg" className="nav-full" fixed="top">
       <Container className="d-flex align-items-center">
-        <BootstrapNavbar.Brand as={Link} to="/" className="d-flex justify-content-center">
+        <BootstrapNavbar.Brand 
+          as={Link} 
+          to="/" 
+          className="d-flex justify-content-center"
+          onClick={handleHomeClick}
+        >
           <img
             src="/images/homeostasis-logo.png"
             height="100"
