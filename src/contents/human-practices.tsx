@@ -1,115 +1,85 @@
 import * as React from 'react';
-import { PageTemplate } from './PageTemplate';
 import './PageTemplate.css';
-import { Inspirations, InspirationLink } from "../components";
 
 export const HumanPractices: React.FC = () => {
-  const links: InspirationLink[] = [
-    { year: 2019, teamName: "Thessaly", pageName: "Human_Practices" },
-    { year: 2019, teamName: "Linkoping_Sweden", pageName: "Human_Practices" },
-    { year: 2019, teamName: "FDR-HB_Peru", pageName: "Human_Practices" },
-    { year: 2020, teamName: "William_and_Mary", pageName: "Human_Practices" },
-    { year: 2020, teamName: "Rochester", pageName: "Human_Practices" },
-    { year: 2020, teamName: "Leiden", pageName: "Human_Practices" },
-    { year: 2020, teamName: "Baltimore_BioCrew", pageName: "Human_Practices" },
-  ];
-
   return (
-    <PageTemplate 
-      title="Human Practices" 
-      subtitle="Understanding and addressing the societal impact of our work"
-    >
-      <div className="row mt-4">
-        <div className="col">
-          <div className="bd-callout bd-callout-info">
-            <h4>Silver Medal Criterion #2</h4>
-            <p>
-              Explain how you have determined your work is responsible and good
-              for the world.
-            </p>
-            <hr />
-            <p>
-              Please see the{" "}
-              <a href="https://competition.igem.org/judging/medals">
-                2024 Medals Page
-              </a>{" "}
-              for more information.
-            </p>
-          </div>
+    <div className="description-page">
+      <header className="page-header">
+        <h1>Human Practices</h1>
+        <h3>Societal Impact and Ethical Considerations of Our Work</h3>
+      </header>
+      
+      <main className="content-section">
+        <section className="societal-impact">
+          <h2>Societal Impact</h2>
+          <p>
+            Our Homeostasis Project addresses one of the most pressing public health challenges of our time. 
+            With approximately 86 million Americans affected by high cholesterol and heart disease being the 
+            leading cause of death globally, our work has the potential to transform how we approach cholesterol 
+            management. The societal impact extends beyond just medical treatment - it touches on healthcare 
+            accessibility, quality of life, and economic implications for both individuals and healthcare systems.
+          </p>
+        </section>
 
-          <div className="bd-callout bd-callout-info">
-            <h4>Best Integrated Human Practices</h4>
-            <p>
-              How does your project affect society and how does society
-              influence the direction of your project? How might ethical
-              considerations and stakeholder input guide your project purpose
-              and design and the experiments you conduct in the lab? How does
-              this feedback enter into the process of your work all through the
-              iGEM competition? Document a thoughtful and creative approach to
-              exploring these questions and how your project evolved in the
-              process to compete for this award!
-            </p>
-            <p>
-              To compete for the Best Integrated Human Practices prize, select
-              the prize on the{" "}
-              <a href="https://competition.igem.org/deliverables/judging-form">
-                judging form
-              </a>{" "}
-              and describe your work on this page.
-            </p>
-            <hr />
-            <p>
-              Please see the{" "}
-              <a href="https://competition.igem.org/judging/awards">
-                2024 Awards Page
-              </a>{" "}
-              for more information.
-            </p>
-          </div>
-        </div>
-      </div>
+        <section className="healthcare-accessibility">
+          <h2>Healthcare Accessibility</h2>
+          <p>
+            Current cholesterol management options, primarily statins, while effective, come with significant 
+            barriers to access. These include high costs, required regular medical monitoring, and potential 
+            side effects that may discourage consistent use. Our synthetic biology approach aims to provide 
+            a more accessible solution that could potentially reduce the need for lifetime medication 
+            dependence and frequent medical interventions. This could particularly benefit underserved 
+            communities where access to regular healthcare monitoring might be limited.
+          </p>
+        </section>
 
-      <div className="row mt-4">
-        <div className="col-lg-8">
-          <h2>Overview</h2>
-          <hr />
+        <section className="ethical-considerations">
+          <h2>Ethical Considerations</h2>
           <p>
-            At iGEM we believe societal considerations should be upfront and
-            integrated throughout the design and execution of synthetic biology
-            projects. "Human Practices" refers to iGEM teams' efforts to
-            actively consider how the world affects their work and their work
-            affects the world. Through your Human Practices activities, your
-            team should demonstrate how you have thought carefully and
-            creatively about whether your project is responsible and good for
-            the world. We invite you to explore issues relating (but not
-            limited) to the ethics, safety, security, and sustainability of your
-            project, and to show how this exploration feeds back into your
-            project purpose, design, and execution.
+            We recognize that working with genetic circuits and synthetic biology raises important ethical 
+            questions. Our approach carefully considers safety at multiple levels: the genetic circuit's 
+            containment, the specificity of its action, and the reversibility of its effects. We've 
+            designed our system with built-in safeguards, ensuring it only activates in response to 
+            elevated cholesterol levels and deactivates when levels normalize. This self-regulating 
+            feature minimizes risks of over-intervention and unintended consequences.
           </p>
+        </section>
+
+        <section className="economic-impact">
+          <h2>Economic Impact</h2>
           <p>
-            Please note you can compete for the Silver Medal criterion #2 and
-            the Best Integrated Human Practices prize with this page.
+            The economic burden of cardiovascular diseases, largely influenced by cholesterol-related 
+            conditions, is substantial. In the United States alone, the annual cost of treating heart 
+            disease exceeds $200 billion. Our project's potential to provide a more efficient and 
+            targeted approach to cholesterol management could significantly reduce these costs. 
+            Additionally, by potentially reducing the incidence of heart attacks and strokes, our 
+            solution could lead to decreased emergency medical interventions and long-term care needs.
           </p>
+        </section>
+
+        <section className="future-implications">
+          <h2>Future Implications</h2>
           <p>
-            For more information, please see the{" "}
-            <a href="https://responsibility.igem.org/human-practices/what-is-human-practices">
-              Human Practices Hub
-            </a>
-            .
+            Our project represents more than just a new treatment approach - it demonstrates the potential 
+            of synthetic biology to create intelligent, responsive therapeutic systems. This could pave 
+            the way for similar approaches to other chronic conditions where continuous regulation is 
+            needed. The success of this project could influence how we think about disease management, 
+            moving from reactive treatments to proactive, self-regulating biological solutions.
           </p>
+        </section>
+        {/*
+        <section className="stakeholder-engagement">
+          <h2>Stakeholder Engagement</h2>
           <p>
-            On this page, your team should document all of your Human Practices
-            work and activities. You should write about the Human Practices
-            topics you considered in your project, document any activities you
-            conducted to explore these topics (such as engaging with experts and
-            stakeholders), describe why you took a particular approach
-            (including referencing any work you built upon), and explain if and
-            how you integrated takeaways from your Human Practices work back
-            into your project purpose, design and/or execution.
+            Throughout our project development, we've engaged with various stakeholders including medical 
+            professionals, bioethicists, and patient advocacy groups. Their insights have helped shape 
+            our approach to ensure it addresses real-world needs while maintaining ethical standards. 
+            We've particularly focused on understanding patient perspectives regarding genetic 
+            interventions and their concerns about safety and long-term effects.
           </p>
-        </div>
-        <Inspirations inspirationLinkList={links} />
-      </div>
-    </PageTemplate>
+        </section>
+        */}
+      </main>
+    </div>
   );
 };
