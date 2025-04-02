@@ -167,7 +167,7 @@ export const Home: React.FC = () => {
             className="img-fluid heartbeat-animation" 
             style={{ maxWidth: '300px' }}
           />
-          <h1 className="display-4 mt-4">Revolutionizing Cholesterol Management</h1>
+          <h1 className="display-4 mt-4">Revolutionizing Bee Management</h1>
           <p className="lead">Using synthetic biology to transform cardiovascular health</p>
         </div>
       </div>
