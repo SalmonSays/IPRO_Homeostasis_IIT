@@ -78,7 +78,7 @@ export function Navbar() {
           onClick={handleHomeClick}
         >
           <img
-            src="/images/homeostasis-logo.png"
+            src="/images/rocketry-logo.png"
             height="100"
             alt="Homeostasis Logo"
             className={`${animate ? 'balloon-animation' : ''}`}
