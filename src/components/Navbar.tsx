@@ -32,13 +32,14 @@ export function Navbar() {
       const folderItems = item.folder.map((subpage, subpageIndex) => {
         if (subpage.path) {
           return (
-            <NavDropdown.Item
-                key={`subpage-${pageIndex}-${subpageIndex}`}
-                as={Link}
-                to={subpage.path}
-                >
-                {subpage.name}
-            </NavDropdown.Item>
+              <NavDropdown.Item
+                  key={`subpage-${pageIndex}-${subpageIndex}`}
+                  as={Link}
+                  to={subpage.path}
+                  className="dropdown-item"
+                  >
+                  {subpage.name}
+              </NavDropdown.Item>
           );
         }
       });
@@ -68,11 +69,11 @@ export function Navbar() {
 
   return (
     <BootstrapNavbar expand="lg" className="nav-full" fixed="top">
-      <Container className="d-flex align-items-center">
+      <Container className="">
         <BootstrapNavbar.Brand 
           as={Link} 
           to="/" 
-          className="d-flex justify-content-center"
+          className="d-flex "
           onClick={handleHomeClick}
         >
           <img
@@ -84,8 +85,8 @@ export function Navbar() {
           />
         </BootstrapNavbar.Brand>
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
-        <BootstrapNavbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">{pages}</Nav>
+        <BootstrapNavbar.Collapse id="basic-navbar-nav" >
+        <Nav className="ms-auto">{pages}</Nav>
         </BootstrapNavbar.Collapse>
       </Container>
     </BootstrapNavbar>
