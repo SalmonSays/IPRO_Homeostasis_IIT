@@ -64,29 +64,6 @@ export const Description: React.FC = () => {
             system is dormant. This feedback loop that regulates itself is at the core of our Homeostasis Project.
           </p>
         </section>
-
-        <section className="results">
-          <h2>Results and Validation</h2>
-          <p>
-            We tried our circuit in the lab. Our first question is: does our cholesterol sensor work? 
-            To find out, we connected the sensor to a reporting gene (luciferase – an enzyme that glows). 
-            When we added cholesterol in experiments, the sensor correctly turned down the glow, showing 
-            it detected the elevated cholesterol. First attempt showed the sensitivity of the sensor; 
-            however, it was off in high cholesterol and on in low – the opposite of what we eventually 
-            want – but it indicated the sensitivity of the sensor. Further refining will turn on with 
-            high cholesterol.
-          </p>
-          <p>
-            The second question is if our shRNA can successfully inhibit the enzyme that produces 
-            cholesterol (SQLE)? From the cell culture, the shRNA was able to downregulate the SQLE 
-            gene, which led to decreased enzyme levels. This is a crucial step since it will guarantee 
-            that our "responder" is indeed able to perform its role and suppress cholesterol synthesis 
-            activity. Currently, we are evaluating the complete loop and integrating the sensor and 
-            responder onto a single plasmid. Preliminary findings are promising; as we have essentially 
-            shown that each part can work on its own, the responder can effectively prevent the 
-            manufacture of cholesterol, and the sensor can receive the signal.
-          </p>
-        </section>
       </main>
     </div>
   );

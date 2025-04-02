@@ -190,4 +190,261 @@
 .new-era-section .lead {
   color: #e9ecef;
   opacity: 0.9;
+}
+
+/* Solution Section Styles */
+.solution-section {
+  background: #2a1a3a;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 2rem 0;
+  color: #e9ecef;
+  padding: 2rem;
+}
+
+.solution-card {
+  padding: 2rem;
+  background: #241b2f;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.solution-card h3 {
+  color: #FF6B6B;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.solution-card p {
+  color: #e9ecef;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.solution-steps {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h4 {
+  color: #FF6B6B;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.step-content p {
+  color: #e9ecef;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.solution-steps .step-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: #241b2f;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: #FF6B6B;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  color: white;
+}
+
+/* Animations */
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Solution Section Additional Styles */
+.solution-features {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #241b2f;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.solution-features h4 {
+  color: #FF6B6B;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.solution-features ul li {
+  display: flex;
+  align-items: center;
+  color: #e9ecef;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.solution-features ul li i {
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+  color: #FF6B6B;
+}
+
+.step-details {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #e9ecef;
+  opacity: 0.9;
+}
+
+.step-details li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-details li::before {
+  content: '•';
+  color: #FF6B6B;
+  position: absolute;
+  left: 0;
+}
+
+.solution-benefits {
+  background: #241b2f;
+  border: none;
+  color: #e9ecef;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.solution-benefits h4 {
+  color: #FF6B6B;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.benefit-item {
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  height: 100%;
+  text-align: center;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.benefit-item i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #FF6B6B;
+}
+
+.benefit-item h5 {
+  color: #FF6B6B;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.benefit-item p {
+  color: #e9ecef;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments for solution section */
+@media (max-width: 768px) {
+  .solution-section {
+    padding: 1.5rem;
+  }
+  
+  .solution-features {
+    margin-top: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .step-details {
+    padding-left: 0.5rem;
+  }
+  
+  .benefit-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .solution-benefits {
+    padding: 1.5rem;
+  }
 } 
