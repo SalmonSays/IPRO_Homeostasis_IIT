@@ -91,7 +91,7 @@ html, body {
   margin-top: .5em ;
   justify-content: space-between;
   width: 100%;
-  margin-right: 25%;
+  margin-right: 15%;
   max-width: 1000px;
 }
 
@@ -116,8 +116,7 @@ html, body {
 
 .nav-link:hover {
   color: #ff8282 !important;
-  font-weight: 500;
-  transition: color .35s ease ;
+  transition: color .3s ease ;
 }
 .dropdown-menu {
   font-size: 1.75rem !important;
@@ -133,7 +132,6 @@ html, body {
 .dropdown-item:hover {
   color: #ff8d8d;
   background-color:#241B2F;
-  font-weight: 500;
   transition: color .35s ease ;
 }
 
