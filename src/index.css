@@ -1,7 +1,7 @@
 /* Reset and base styles */
 html, body {
   margin: 0;
-  padding-top: 20px !important;
+  padding-top: 40px !important;
   min-height: 100vh;
   background-color: #2a1a3a !important;
   color: white !important;
@@ -115,12 +115,15 @@ html, body {
 }
 
 .nav-link:hover {
-  color: white !important;
+  color: #ff8282 !important;
+  font-weight: 500;
+  transition: color .35s ease ;
 }
 .dropdown-menu {
   font-size: 1.75rem !important;
   background-color: #241B2F;
 }
+
 
 .dropdown-item {
   color: rgba(255, 255, 255, 0.8);
@@ -128,17 +131,20 @@ html, body {
 
 
 .dropdown-item:hover {
-  color: white;
+  color: #ff8d8d;
   background-color:#241B2F;
+  font-weight: 500;
+  transition: color .35s ease ;
 }
 
 
 .navbar-light .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.651);
+  margin-right: 5% !important;
+  border-color: #FF6B6B;
   background-color: #241B2F;
 }
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, .65%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 107, 107, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 
 }
 
