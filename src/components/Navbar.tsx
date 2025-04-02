@@ -48,6 +48,7 @@ export function Navbar() {
           key={`page-${pageIndex}`}
           title={item.name}
           id="basic-nav-dropdown"
+          className="nav-item"
         >
           {folderItems}
         </NavDropdown>
@@ -60,6 +61,7 @@ export function Navbar() {
           as={Link} 
           to={item.path}
           onClick={isHome ? handleHomeClick : undefined}
+          className="nav-item"
         >
           {item.name}
         </Nav.Link>
@@ -69,7 +71,6 @@ export function Navbar() {
 
   return (
     <BootstrapNavbar expand="lg" className="nav-full" fixed="top">
-      <Container className="">
         <BootstrapNavbar.Brand 
           as={Link} 
           to="/" 
@@ -88,7 +89,6 @@ export function Navbar() {
         <BootstrapNavbar.Collapse id="basic-navbar-nav" >
         <Nav className="ms-auto">{pages}</Nav>
         </BootstrapNavbar.Collapse>
-      </Container>
     </BootstrapNavbar>
   );
 }
