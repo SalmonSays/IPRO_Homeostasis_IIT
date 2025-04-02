@@ -162,7 +162,7 @@ export const Home: React.FC = () => {
       <div className="row mt-4 mb-5">
         <div className="col text-center">
           <img 
-            src="/images/homeostasis-logo.png" 
+            src="/images/rocketry-logo.png" 
             alt="Homeostasis Logo" 
             className="img-fluid heartbeat-animation" 
             style={{ maxWidth: '300px' }}
