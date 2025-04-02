@@ -168,7 +168,7 @@ export const Home: React.FC = () => {
             style={{ maxWidth: '300px' }}
           />
           <h1 className="display-4 mt-4">Revolutionizing Bee Management</h1>
-          <p className="lead">Using synthetic biology to transform cardiovascular health</p>
+          <p className="lead">Using synthetic biology to transform bees</p>
         </div>
       </div>
 
