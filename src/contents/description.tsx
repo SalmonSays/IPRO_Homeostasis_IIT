@@ -13,14 +13,12 @@ export const Description: React.FC = () => {
         <section className="introduction">
           <h2>Introduction</h2>
           <p>
-            Welcome to the Homeostasis Project. We're treating high cholesterol with synthetic biology, 
-            setting up a regulator for the body's cholesterol levels. Although cholesterol is necessary 
-            for life, too much of it can clog arteries and cause heart attacks and strokes. From the CDC, 
-            about 86 million people in America suffer from elevated cholesterol. Although statins and other 
-            modern medicines are helpful, they have drawbacks and aren't always effective. Our project's goal 
-            is to create a genetic circuit that can recognize increased cholesterol levels and take action to 
-            bring the levels back into balance. We'll explain how this artificial circuit works and why it 
-            could completely transform cholesterol regulation in this one-minute synopsis.
+            This project was initiated as a collaborative effort between the Biological Payload and
+            Rocketry teams. Both teams aim to compete in prestigious competitions, including the
+            Rocketry team’s biological payload launch in June 2025 and the Biological Payload team’s
+            participation in the annual iGEM competition in October. The biological payload is scheduled
+            for a preliminary launch at 10,000 feet, with future competitions targeting altitudes of
+            100,000 and 200,000 feet
           </p>
         </section>
 
