@@ -36,6 +36,7 @@ class Page implements Base {
   path: string | undefined;
   component: React.FC | undefined;
   lead: string | undefined;
+  logo: string | undefined;
 }
 
 const Pages: (Page | Folder)[] = [
@@ -45,6 +46,7 @@ const Pages: (Page | Folder)[] = [
     path: "/",
     component: Home,
     lead: "Welcome to IIT's iGEM 2025 submission site!! Your team has been approved and you are ready to start the iGEM season!",
+    logo: ""
   },
   {
     name: "Team",
@@ -55,6 +57,7 @@ const Pages: (Page | Folder)[] = [
         path: "/team",
         component: Team,
         lead: "On this page you can introduce your team members, instructors, and advisors.",
+        logo: "/images/team_logo.png"
       },
       {
         name: "Attributions",
@@ -62,6 +65,7 @@ const Pages: (Page | Folder)[] = [
         path: "/attributions",
         component: Attributions,
         lead: "This page must show the attribution form of your project. This includes the work done by each of the student members on your team and any work that was done by people outside of your team, including the host labs, advisors, instructors, and individuals not on the team roster. This requirement is not about literature references - these can and should be displayed throughout your wiki.",
+        logo: "/images/attribution_logo.png"
       },
     ],
   },
@@ -74,6 +78,7 @@ const Pages: (Page | Folder)[] = [
         path: "/contribution",
         component: Contribution,
         lead: "Make a useful contribution for future iGEM teams. Use this page to document that contribution.",
+        logo: "/imagescontribution_logo.png"
       },
       {
         name: "Description",
@@ -81,6 +86,7 @@ const Pages: (Page | Folder)[] = [
         path: "/description",
         component: Description,
         lead: "Describe how and why you chose your iGEM project.",
+        logo: "/images/ "
       },
       {
         name: "Engineering",

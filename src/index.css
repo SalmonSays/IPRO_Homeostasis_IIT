@@ -110,7 +110,7 @@ html, body {
 
 .nav-link {
   font-size: 1.75rem !important;
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 1) !important;
   padding-left: 2rem !important;
 }
 
@@ -119,13 +119,13 @@ html, body {
   transition: color .3s ease ;
 }
 .dropdown-menu {
-  font-size: 1.75rem !important;
+  font-size: 1.7rem !important;
   background-color: #241B2F;
 }
 
 
 .dropdown-item {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
 }
 
 
