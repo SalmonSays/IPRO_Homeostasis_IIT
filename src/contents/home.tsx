@@ -23,6 +23,7 @@ export const Home: React.FC = () => {
   const [animateStats, setAnimateStats] = React.useState(false);
   const [animateChallenges, setAnimateChallenges] = React.useState(false);
   const [animateNewEra, setAnimateNewEra] = React.useState(false);
+  const [animateSolution, setAnimateSolution] = React.useState(false);
   
   const stats: StatItem[] = [
     { 
@@ -129,10 +130,29 @@ export const Home: React.FC = () => {
       newEraObserver.observe(newEraSection);
     }
 
+    // Add solution section observer
+    const solutionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setAnimateSolution(true);
+            solutionObserver.disconnect(); // Only animate once
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const solutionSection = document.querySelector('.solution-section');
+    if (solutionSection) {
+      solutionObserver.observe(solutionSection);
+    }
+
     return () => {
       clearInterval(interval);
       observer.disconnect();
       newEraObserver.disconnect();
+      solutionObserver.disconnect();
     };
   }, []);
 
@@ -242,7 +262,122 @@ export const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* New Solution Section */}
+      {/* Our Innovative Solution Section */}
+      <div className="row mt-5 mb-5">
+        <div className="col">
+          <div className={`solution-section p-5 ${animateSolution ? 'animate__animated animate__fadeIn' : ''}`}>
+            <h2 className="text-center mb-4">Our Innovative Solution</h2>
+            <div className="row align-items-stretch">
+              <div className="col-md-6">
+                <div className={`solution-card ${animateSolution ? 'slide-in-left' : ''}`}>
+                  <div className="solution-icon mb-4">
+                    <i className="fas fa-dna pulse-animation"></i>
+                  </div>
+                  <h3>Synthetic Biology Approach</h3>
+                  <p className="mb-4">
+                    We're building a self-regulating genetic circuit that works like a smart thermostat 
+                    for cholesterol. When levels get too high, it automatically triggers a response to 
+                    bring them back down.
+                  </p>
+                  <div className="solution-features">
+                    <h4 className="text-primary mb-3">Key Features</h4>
+                    <ul className="list-unstyled">
+                      <li className="mb-2">
+                        <i className="fas fa-check-circle text-success me-2"></i>
+                        Real-time cholesterol monitoring
+                      </li>
+                      <li className="mb-2">
+                        <i className="fas fa-check-circle text-success me-2"></i>
+                        Self-regulating feedback loop
+                      </li>
+                      <li className="mb-2">
+                        <i className="fas fa-check-circle text-success me-2"></i>
+                        Minimal side effects
+                      </li>
+                      <li className="mb-2">
+                        <i className="fas fa-check-circle text-success me-2"></i>
+                        Personalized response system
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className={`solution-steps ${animateSolution ? 'fade-in-up' : ''}`}>
+                  <div className="step-item">
+                    <div className="step-number">1</div>
+                    <div className="step-content">
+                      <h4>Detect</h4>
+                      <p>Smart sensor recognizes high cholesterol levels through advanced molecular detection systems</p>
+                      <ul className="step-details">
+                        <li>Continuous monitoring of blood cholesterol</li>
+                        <li>Precise measurement of LDL and HDL levels</li>
+                        <li>Early warning system for potential risks</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="step-item">
+                    <div className="step-number">2</div>
+                    <div className="step-content">
+                      <h4>Respond</h4>
+                      <p>Triggers natural regulation mechanism through engineered genetic circuits</p>
+                      <ul className="step-details">
+                        <li>Activation of cholesterol-lowering pathways</li>
+                        <li>Enhanced natural metabolic processes</li>
+                        <li>Targeted cellular response system</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="step-item">
+                    <div className="step-number">3</div>
+                    <div className="step-content">
+                      <h4>Balance</h4>
+                      <p>Maintains healthy cholesterol levels through continuous feedback regulation</p>
+                      <ul className="step-details">
+                        <li>Dynamic adjustment of metabolic activity</li>
+                        <li>Long-term stability maintenance</li>
+                        <li>Prevention of cholesterol fluctuations</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row mt-4">
+              <div className="col-12">
+                <div className="solution-benefits p-4 rounded">
+                  <h4 className="text-center mb-3">Why Our Solution Matters</h4>
+                  <div className="row">
+                    <div className="col-md-4">
+                      <div className="benefit-item text-center">
+                        <i className="fas fa-heartbeat text-danger mb-2"></i>
+                        <h5>Improved Health Outcomes</h5>
+                        <p>More effective cholesterol management leading to better cardiovascular health</p>
+                      </div>
+                    </div>
+                    <div className="col-md-4">
+                      <div className="benefit-item text-center">
+                        <i className="fas fa-user-md text-primary mb-2"></i>
+                        <h5>Personalized Treatment</h5>
+                        <p>Adapts to individual patient needs and response patterns</p>
+                      </div>
+                    </div>
+                    <div className="col-md-4">
+                      <div className="benefit-item text-center">
+                        <i className="fas fa-chart-line text-success mb-2"></i>
+                        <h5>Long-term Sustainability</h5>
+                        <p>Continuous monitoring and adjustment for lasting results</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* New Era in Cholesterol Management Section */}
       <div className="row mt-5">
         <div className="col">
           <div className="new-era-section">
@@ -295,7 +430,7 @@ export const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Human Impact Section */}
+      {/* Real People, Real Impact Section */}
       <div className="row mt-5">
         <div className="col">
           <h2 className="text-center display-5">Real People, Real Impact</h2>
@@ -319,20 +454,14 @@ export const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Get Involved Section */}
-      <div className="row mt-5">
+      {/* Follow Our Journey Section */}
+      <div className="row mt-5 mb-5">
         <div className="col text-center">
           <h2 className="display-5">Follow Our Journey</h2>
           <hr />
           <div className="d-flex justify-content-center gap-3 mt-4">
             <button className="btn btn-primary btn-lg">
               Sign Up for Updates
-            </button>
-            <button className="btn btn-outline-light btn-lg">
-              Read Our Research
-            </button>
-            <button className="btn btn-outline-light btn-lg">
-              Collaborate With Us
             </button>
           </div>
         </div>
