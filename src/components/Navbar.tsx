@@ -28,20 +28,27 @@ export function Navbar() {
 
   const pages = Pages.map((item, pageIndex) => {
     if ("folder" in item && item.folder) {
-      const folderItems = item.folder.map((subpage, subpageIndex) => {
-        if (subpage.path) {
-          return (
-              <NavDropdown.Item
-                  key={`subpage-${pageIndex}-${subpageIndex}`}
-                  as={Link}
-                  to={subpage.path}
-                  className="dropdown-item"
-                  >
-                  {subpage.name}
-              </NavDropdown.Item>
-          );
-        }
-      });
+      onst folderItems = item.folder.map((subpage, subpageIndex) => {
+  if (subpage.path) {
+    return (
+      <NavDropdown.Item
+        key={`subpage-${pageIndex}-${subpageIndex}`}
+        as={Link}
+        to={subpage.path}
+        className="dropdown-item d-flex align-items-center"
+      >
+        {subpage.logo && (
+          <img
+            src={subpage.logo}
+            alt={`${subpage.name} logo`}
+            style={{ width: "20px", height: "20px", marginRight: "8px" }}
+          />
+        )}
+        {subpage.name}
+      </NavDropdown.Item>
+    );
+  }
+});
       return (
         <NavDropdown
           key={`page-${pageIndex}`}
