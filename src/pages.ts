@@ -57,7 +57,7 @@ const Pages: (Page | Folder)[] = [
         path: "/team",
         component: Team,
         lead: "On this page you can introduce your team members, instructors, and advisors.",
-        logo: "/images/team_logo.png"
+        logo: "/images/Team_logo.png"
       },
       {
         name: "Attributions",
@@ -65,7 +65,7 @@ const Pages: (Page | Folder)[] = [
         path: "/attributions",
         component: Attributions,
         lead: "This page must show the attribution form of your project. This includes the work done by each of the student members on your team and any work that was done by people outside of your team, including the host labs, advisors, instructors, and individuals not on the team roster. This requirement is not about literature references - these can and should be displayed throughout your wiki.",
-        logo: "/images/attribution_logo.png"
+        logo: "/images/Attribution_logo.png"
       },
     ],
   },
@@ -78,7 +78,7 @@ const Pages: (Page | Folder)[] = [
         path: "/contribution",
         component: Contribution,
         lead: "Make a useful contribution for future iGEM teams. Use this page to document that contribution.",
-        logo: "/imagescontribution_logo.png"
+        logo: "/images/Contribution_logo.png"
       },
       {
         name: "Description",
@@ -86,7 +86,7 @@ const Pages: (Page | Folder)[] = [
         path: "/description",
         component: Description,
         lead: "Describe how and why you chose your iGEM project.",
-        logo: "/images/ "
+        logo: "/images/Description_logo.png"
       },
       {
         name: "Engineering",
@@ -94,6 +94,7 @@ const Pages: (Page | Folder)[] = [
         path: "/engineering",
         component: Engineering,
         lead: "Demonstrate engineering success in a technical aspect of your project by going through at least one iteration of the engineering design cycle. This achievement should be distinct from your Contribution for Bronze.",
+        logo: "/images/Engineering_logo.png"
       },
       {
         name: "Experiments",
@@ -101,6 +102,7 @@ const Pages: (Page | Folder)[] = [
         path: "/experiments",
         component: Experiments,
         lead: "Describe the research, experiments, and protocols you used in your iGEM project.",
+        logo: "/images/Experiment_logo.png"
       },
       {
         name: "Notebook",
@@ -108,6 +110,7 @@ const Pages: (Page | Folder)[] = [
         path: "/notebook",
         component: Notebook,
         lead: "Document the dates you worked on your project. This should be a detailed account of the work done each day for your project.",
+        logo: "/images/Notebook_logo.png"
       },
       {
         name: "Results",
@@ -115,6 +118,7 @@ const Pages: (Page | Folder)[] = [
         path: "/results",
         component: Results,
         lead: "You can describe the results of your project and your future plans here.",
+        logo: "/images/Results_logo.png"
       },
     ],
   },
@@ -124,6 +128,7 @@ const Pages: (Page | Folder)[] = [
     path: "/safety",
     component: Safety,
     lead: "Describe all the safety issues of your project.",
+    logo: ""
   },
   {
     name: "Human Practices",
@@ -131,6 +136,7 @@ const Pages: (Page | Folder)[] = [
     path: "/human-practices",
     component: HumanPractices,
     lead: "We ask every team to think deeply and creatively about whether their project is responsible and good for the world. Consider how the world affects your work and how your work affects the world.",
+    logo: ""
   },
   {
     name: "Awards",
@@ -141,6 +147,7 @@ const Pages: (Page | Folder)[] = [
         path: "/education",
         component: Education,
         lead: "Innovative educational tools and outreach activities have the ability to establish a two-way dialogue with new communities by discussing public values and the science behind synthetic biology.",
+        logo: ""
       },
       {
         name: "Entrepreneurship",
@@ -148,6 +155,7 @@ const Pages: (Page | Folder)[] = [
         path: "/entrepreneurship",
         component: Entrepreneurship,
         lead: "The entrepreneurship prize recognizes exceptional effort to build a business case and commercialize an iGEM project.",
+        logo: ""
       },
       {
         name: "Hardware",
@@ -155,6 +163,7 @@ const Pages: (Page | Folder)[] = [
         path: "/hardware",
         component: Hardware,
         lead: "Hardware in iGEM should make synthetic biology based on standard parts easier, faster, better, or more accessible to our community.",
+        logo: ""
       },
       {
         name: "Inclusivity",
@@ -162,6 +171,7 @@ const Pages: (Page | Folder)[] = [
         path: "/inclusivity",
         component: Inclusivity,
         lead: "Every individual, regardless of background or experience, should have an equal opportunity to engage with scientific knowledge and technological development.",
+        logo: ""
       },
       {
         name: "Measurement",
@@ -169,6 +179,7 @@ const Pages: (Page | Folder)[] = [
         path: "/measurement",
         component: Measurement,
         lead: "Synthetic Biology needs great measurement approaches for characterizing parts, and efficient new methods for characterizing many parts at once. Describe your measurement approaches on this page.",
+        logo: ""
       },
       {
         name: "Model",
@@ -176,6 +187,7 @@ const Pages: (Page | Folder)[] = [
         path: "/model",
         component: Model,
         lead: "Explain your model's assumptions, data, parameters, and results in a way that anyone could understand.",
+        logo: ""
       },
       {
         name: "Plant",
@@ -183,6 +195,7 @@ const Pages: (Page | Folder)[] = [
         path: "/plant",
         component: Plant,
         lead: "This award is designed to celebrate exemplary work done in plant synthetic biology.",
+        logo: ""
       },
       {
         name: "Software",
@@ -190,6 +203,7 @@ const Pages: (Page | Folder)[] = [
         path: "/software",
         component: Software,
         lead: "Software in iGEM should make synthetic biology based on standard parts easier, faster, better or more accessible to our community.",
+        logo: ""
       },
       {
         name: "Sustainable",
@@ -197,6 +211,7 @@ const Pages: (Page | Folder)[] = [
         path: "/sustainable",
         component: Sustainable,
         lead: "Describe how you have evaluated your project ideas against one or more of the SDGs.",
+        logo: ""
       },
     ],
   },
