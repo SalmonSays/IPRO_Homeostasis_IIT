@@ -48,7 +48,7 @@ const Pages: (Page | Folder)[] = [
     lead: "Welcome to IIT's iGEM 2025 submission site!! Your team has been approved and you are ready to start the iGEM season!",
     logo: ""
   },
-  {
+  /*{
     name: "Team",
     folder: [
       {
@@ -69,18 +69,18 @@ const Pages: (Page | Folder)[] = [
         logo: "/images/Attribution_logo"
       },
     ],
-  },
+  },*/
   {
     name: "Project",
     folder: [
-      {
+      /*{
         name: "Contribution",
         title: "Contribution",
         path: "/contribution",
         component: Contribution,
         lead: "Make a useful contribution for future iGEM teams. Use this page to document that contribution.",
         logo: "/images/Contribution_logo"
-      },
+      },*/
       {
         name: "Description",
         title: "Project Description",
@@ -89,7 +89,7 @@ const Pages: (Page | Folder)[] = [
         lead: "Describe how and why you chose your iGEM project.",
         logo: "/images/Description_logo"
       },
-      {
+      /*{
         name: "Engineering",
         title: "Engineering Success",
         path: "/engineering",
@@ -104,7 +104,7 @@ const Pages: (Page | Folder)[] = [
         component: Experiments,
         lead: "Describe the research, experiments, and protocols you used in your iGEM project.",
         logo: "/images/Experiment_logo"
-      },
+      },*/
       {
         name: "Notebook",
         title: "Notebook",
@@ -139,7 +139,7 @@ const Pages: (Page | Folder)[] = [
     lead: "We ask every team to think deeply and creatively about whether their project is responsible and good for the world. Consider how the world affects your work and how your work affects the world.",
     logo: ""
   },
-  {
+  /*{
     name: "Awards",
     folder: [
       {
@@ -215,7 +215,7 @@ const Pages: (Page | Folder)[] = [
         logo: ""
       },
     ],
-  },
+  },*/
 ];
 
 export default Pages;
