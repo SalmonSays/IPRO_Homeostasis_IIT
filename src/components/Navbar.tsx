@@ -38,11 +38,18 @@ export function Navbar() {
             className="dropdown-item d-flex align-items-center"
           >
           {subpage.logo && (
-            <img
-              src={subpage.logo}
-              alt={`${subpage.name} logo`}
-              style={{ width: "20px", height: "20px", marginRight: "8px" }}
-            />
+            <div className="icon-container">
+              <img
+                src={`${subpage.logo}.png`}
+                alt={`${subpage.name} logo`}
+                className="icon default-icon"
+              />      
+              <img 
+                src={`${subpage.logo}_solid_ff8282.png`} 
+                alt="Default Image"
+                className="icon hover-icon"
+              />
+            </div>
           )}
           {subpage.name}
           </NavDropdown.Item>

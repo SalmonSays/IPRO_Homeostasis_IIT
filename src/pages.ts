@@ -57,7 +57,8 @@ const Pages: (Page | Folder)[] = [
         path: "/team",
         component: Team,
         lead: "On this page you can introduce your team members, instructors, and advisors.",
-        logo: "/images/Team_logo.png"
+        logo: "/images/Team_logo"
+        
       },
       {
         name: "Attributions",
@@ -65,7 +66,7 @@ const Pages: (Page | Folder)[] = [
         path: "/attributions",
         component: Attributions,
         lead: "This page must show the attribution form of your project. This includes the work done by each of the student members on your team and any work that was done by people outside of your team, including the host labs, advisors, instructors, and individuals not on the team roster. This requirement is not about literature references - these can and should be displayed throughout your wiki.",
-        logo: "/images/Attribution_logo.png"
+        logo: "/images/Attribution_logo"
       },
     ],
   },
@@ -78,7 +79,7 @@ const Pages: (Page | Folder)[] = [
         path: "/contribution",
         component: Contribution,
         lead: "Make a useful contribution for future iGEM teams. Use this page to document that contribution.",
-        logo: "/images/Contribution_logo.png"
+        logo: "/images/Contribution_logo"
       },
       {
         name: "Description",
@@ -86,7 +87,7 @@ const Pages: (Page | Folder)[] = [
         path: "/description",
         component: Description,
         lead: "Describe how and why you chose your iGEM project.",
-        logo: "/images/Description_logo.png"
+        logo: "/images/Description_logo"
       },
       {
         name: "Engineering",
@@ -94,7 +95,7 @@ const Pages: (Page | Folder)[] = [
         path: "/engineering",
         component: Engineering,
         lead: "Demonstrate engineering success in a technical aspect of your project by going through at least one iteration of the engineering design cycle. This achievement should be distinct from your Contribution for Bronze.",
-        logo: "/images/Engineering_logo.png"
+        logo: "/images/Engineering_logo"
       },
       {
         name: "Experiments",
@@ -102,7 +103,7 @@ const Pages: (Page | Folder)[] = [
         path: "/experiments",
         component: Experiments,
         lead: "Describe the research, experiments, and protocols you used in your iGEM project.",
-        logo: "/images/Experiment_logo.png"
+        logo: "/images/Experiment_logo"
       },
       {
         name: "Notebook",
@@ -110,7 +111,7 @@ const Pages: (Page | Folder)[] = [
         path: "/notebook",
         component: Notebook,
         lead: "Document the dates you worked on your project. This should be a detailed account of the work done each day for your project.",
-        logo: "/images/Notebook_logo.png"
+        logo: "/images/Notebook_logo"
       },
       {
         name: "Results",
@@ -118,7 +119,7 @@ const Pages: (Page | Folder)[] = [
         path: "/results",
         component: Results,
         lead: "You can describe the results of your project and your future plans here.",
-        logo: "/images/Results_logo.png"
+        logo: "/images/Results_logo"
       },
     ],
   },
