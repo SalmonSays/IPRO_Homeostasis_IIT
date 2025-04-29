@@ -8,5 +8,10 @@ export default () => {
   return defineConfig({
     base: `/${stringToSlug(env.VITE_TEAM_NAME)}/`,
     plugins: [react()],
+    server: {
+      proxy: {
+        '/api': 'http://localhost:8000'
+      }
+    }
   });
 };
