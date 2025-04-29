@@ -2,7 +2,6 @@ import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import { stringToSlug } from "./src/utils";
 
-// https://vitejs.dev/config/
 export default () => {
   const env = loadEnv("dev", process.cwd());
   return defineConfig({
@@ -10,7 +9,13 @@ export default () => {
     plugins: [react()],
     server: {
       proxy: {
-        '/api': 'http://localhost:8000'
+        // Forward /api requests to the FastAPI service running inside the same container
+        "/api": {
+          target: "http://127.0.0.1:8000", // FastAPI
+          changeOrigin: true,               // make Host header match target
+          secure: false,                    // allow self‑signed certs (dev only)
+          rewrite: (path) => path           // keep /api prefix intact
+        }
       }
     }
   });
