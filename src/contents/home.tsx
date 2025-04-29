@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './home.css';  // Make sure to create this file
+import ChatBox from '../components/ChatBox';
 
 interface StatItem {
   number: string;
@@ -109,7 +110,7 @@ export const Home: React.FC = () => {
     });
 
     document.querySelectorAll('.animate-on-scroll').forEach((element) => {
-      observer.observe(element);
+      observer.observe(element as Element);
     });
 
     // New Era section scroll observer
@@ -169,6 +170,13 @@ export const Home: React.FC = () => {
           />
           <h1 className="display-4 mt-4">Revolutionizing Cholesterol Management</h1>
           <p className="lead">Using synthetic biology to transform cardiovascular health</p>
+        </div>
+      </div>
+
+      {/* Chat Box Section */}
+      <div className="row justify-content-center mt-3">
+        <div className="col-12 col-md-10 col-lg-8">
+          <ChatBox />
         </div>
       </div>
 
