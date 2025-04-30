@@ -3,17 +3,17 @@ html, body {
   margin: 0;
   padding-top: 40px !important;
   min-height: 100vh;
-  background-color: #2a1a3a !important;
+  background-color: #4169e1 !important;
   color: white !important;
 }
 
 #root {
   min-height: 100vh;
-  background-color: #2a1a3a;
+  background-color: #4169e1;
 }
 
 .container {
-  background-color: #2a1a3a;
+  background-color: #4169e1;
 }
 
 /* Animation overrides */
@@ -184,7 +184,7 @@ main {
   min-height: calc(100vh - 120px);
   padding: 20px;
   margin-top: 120px;
-  background-color: #2a1a3a;
+  background-color: #4169e1;
 }
 
 /* Update impact section and treatment challenges */
